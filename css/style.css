@@ -1,0 +1,144 @@
+/* Core design */
+* {
+	font-family: "Open Sans", sans-serif;
+}
+
+
+/* Navbar Setting */
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem;
+	background-color: rgba(34, 83, 151, 0.506);
+	color: #fff;
+	position: fixed;
+	width: 100%;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+
+.nav-links {
+	margin: 0;
+}
+
+.nav-links a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* LOGO */
+.logo {}
+
+.logo img {
+	width: 10rem;
+	height: 4.6rem;
+	object-fit: cover;
+}
+
+/* NAVBAR MENU */
+.menu {
+	display: flex;
+	gap: 1em;
+	font-size: 18px;
+}
+
+.menu ul,
+li,
+ol {
+	list-style: none;
+}
+
+.menu li:hover {
+	background-color: hsl(215, 63%, 50%);
+	border-radius: 5px;
+	transition: 0.3s ease;
+}
+
+.menu li {
+	padding: 5px 14px;
+}
+
+/* RESPONSIVE NAVBAR MENU STARTS */
+
+/* CHECKBOX HACK */
+
+input[type=checkbox] {
+	display: none;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+	display: none;
+	font-size: 24px;
+	user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+	.menu {
+		display: none;
+		position: absolute;
+		background-color: rgba(34, 83, 151);
+		color: #fff;
+		right: 0;
+		left: 0;
+		text-align: center;
+		padding: 16px 0;
+		margin-top: 3.18rem;
+		backdrop-filter: blur(10px) !important;
+		-webkit-backdrop-filter: blur(10px) !important;
+	}
+
+	.menu li:hover {
+		display: inline-block;
+		background-color: rgb(34, 83, 151);
+		transition: 0.3s ease;
+	}
+
+	.menu li+li {
+		margin-top: 12px;
+	}
+
+	input[type=checkbox]:checked~.menu {
+		display: block;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+
+}
+
+.hamburger:hover {
+	cursor: pointer;
+}
+
+
+/* Hero */
+#hero {
+	width: 100%;
+	padding: 20rem 0rem 10rem 0rem;
+	background-image: url("https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhdGlvbmVyeXxlbnwwfHwwfHx8MA%3D%3D");
+	background-position: center;
+}
+
+.btn-primary {
+	background-color: rgb(34, 83, 151);
+	border-color: #225397;
+}
+
+.btn-primary:hover {
+	background-color: hsl(215, 63%, 20%);
+	border-color: hsl(215, 63%, 20%);
+}
+
+#hero h1 {
+	font-weight: 700;
+	text-transform: lowercase;
+}
+
+.hero-content {
+	width: 80%;
+}
