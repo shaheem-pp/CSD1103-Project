@@ -195,7 +195,7 @@ footer a {
 }
 
 footer a:hover {
-	background-color: rgba(34, 83, 151, 0.897);
+	background-color: hsla(215, 63%, 60%);
 	transition: 0.3s ease;
 }
 
