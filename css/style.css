@@ -203,3 +203,8 @@ footer a:hover {
 	font-family: 'Courier New', Courier, monospace;
 	font-weight: 700;
 }
+
+/* flyer styles */
+.flyer-img{
+	width: 100%;
+}
