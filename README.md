@@ -4,7 +4,7 @@ To get a local copy up and running follow these simple steps:
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/yourusername/stationery-studio.git
+   git clone https://github.com/username/CSD1103-Project.git
    ```
 2. **Navigate to the project directory**
    ```sh
