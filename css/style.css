@@ -416,3 +416,29 @@ footer a:hover {
 hr {
 	color: #c0c0c0;
 }
+
+.btn-secondary {
+	background-color: rgb(57, 62, 69);
+	border-color: rgb(57, 62, 69);
+	padding: .5rem 1.3rem;
+}
+
+.btn-secondary:hover {
+	background-color: rgba(57, 62, 69, 0.74);
+	border-color: rgba(57, 62, 69, 0.74);
+}
+
+/* products view styling */
+.product-row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-col{
+	width: 33%;
+	margin: 0;
+	padding: 2rem;
+}
