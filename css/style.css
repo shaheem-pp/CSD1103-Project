@@ -437,8 +437,22 @@ hr {
 	align-items: center;
 }
 
-.product-col{
+.product-col {
 	width: 33%;
 	margin: 0;
 	padding: 2rem;
+}
+
+
+
+@media (max-width: 800px) {
+	.product-col {
+		width: 50%;
+	}
+}
+
+@media (max-width: 630px) {
+	.product-col {
+		width: 100%;
+	}
 }
