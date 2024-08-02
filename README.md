@@ -1,6 +1,6 @@
 ## Getting Started
 
-To get a local copy up and running follow these simple steps:
+To get a local copy up and running, follow these simple steps:
 
 1. **Clone the repository**
    ```sh
@@ -33,7 +33,7 @@ If you have a suggestion that would make this project better, please follow the 
    - Open your terminal or command prompt.
    - Type the following command, replacing `yourusername` with your GitHub username:
      ```sh
-     git clone https://github.com/yourusername/stationery-studio.git
+     git clone https://github.com/yourusername/CSD1103-Project.git
      ```
    - Navigate to the cloned directory:
      ```sh
@@ -89,86 +89,114 @@ If you have a suggestion that would make this project better, please follow the 
 
 Your contributions are now ready to be reviewed. Thank you for helping improve the Stationery Studio project!
 
-# Stationery Studio
+## Handling Updates from the Main Repository
 
-Welcome to the Stationery Studio project! This repository contains the source code and resources for the Stationery Studio website, an online platform for browsing and purchasing a wide selection of stationery products.
+Sometimes, the `main` branch of the original repository will be updated while you are working on your branch. Here’s how to keep your local branch up-to-date:
 
-## Table of Contents
+1. **Add the Original Repository as a Remote**
+   - First, add the original repository as a remote. This is usually named `upstream`.
+     ```sh
+     git remote add upstream https://github.com/username/CSD1103-Project.git
+     ```
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Webpages](#webpages)
-- [Graphics and Design](#graphics-and-design)
-- [Color Scheme](#color-scheme)
-- [Font Styles](#font-styles)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+2. **Fetch the Latest Changes**
+   - Fetch the latest changes from the original repository:
+     ```sh
+     git fetch upstream
+     ```
 
-## Project Overview
+3. **Merge the Latest Changes**
+   - Switch to your `main` branch:
+     ```sh
+     git checkout main
+     ```
+   - Merge the changes from `upstream/main` into your local `main` branch:
+     ```sh
+     git merge upstream/main
+     ```
 
-The Stationery Studio website aims to provide customers with a seamless online shopping experience for a variety of stationery products. Customers can pre-book items for pickup or home delivery, check stock availability at different franchise locations, and enjoy location-specific special offers and promotions.
+4. **Rebase Your Feature Branch**
+   - Switch back to your feature branch:
+     ```sh
+     git checkout feature/AmazingFeature
+     ```
+   - Rebase your branch with the updated `main`:
+     ```sh
+     git rebase main
+     ```
 
-### Target Audience
+5. **Resolve Conflicts (if any)**
+   - If there are any merge conflicts, resolve them manually. After resolving conflicts, continue the rebase process:
+     ```sh
+     git rebase --continue
+     ```
 
-- Employees searching for office supplies.
-- Parents and students shopping for school supplies.
-- Hobbyists and artists needing specific stationery.
-- Small business owners and entrepreneurs.
-- General customers seeking premium stationery products.
+6. **Push Your Updated Feature Branch**
+   - After rebasing, you need to force push your feature branch to update it on GitHub:
+     ```sh
+     git push --force origin feature/AmazingFeature
+     ```
 
-## Features
+## Additional Git Commands and Troubleshooting
 
-- **Home Page**: Promotional banners, overview of the business, and highlighted products.
-- **About Page**: Detailed information about the company, its goals, and services.
-- **Products Page**: Comprehensive product details, images, categories, and availability.
-- **Contact Page**: Contact information, location map, business hours, and contact form.
+### Common Commands
 
-## Webpages
+- **Check the Status**
+  - To check the status of your working directory and staging area:
+    ```sh
+    git status
+    ```
 
-### Home Page
+- **View Commit History**
+  - To view the commit history:
+    ```sh
+    git log
+    ```
 
-- **Synopsis of the Enterprise**: Introduction to Stationery Studio and its commitment to quality.
-- **Featured Products**: Highlight of premium products like Executive Fountain Pen and Designer Desk Organizer.
-- **Promotional Banners**: Offers like "Buy 2 Get 1 Free" and "Free Shipping on Orders Over $30".
+- **Discard Changes**
+  - To discard changes in your working directory:
+    ```sh
+    git checkout -- <file>
+    ```
 
-### About Page
+- **Delete a Branch**
+  - To delete a local branch:
+    ```sh
+    git branch -d feature/AmazingFeature
+    ```
+  - To delete a remote branch:
+    ```sh
+    git push origin --delete feature/AmazingFeature
+    ```
 
-- **Why the Visitors Should Bother Reading Your Site**: Unique value and exceptional customer service.
-- **What Problems We Solve**: Wide range of products for various needs and reliable delivery options.
-- **How Can We Help Them**: Pre-booking, home delivery, and special offers.
+### Troubleshooting
 
-### Products Page
+- **Error: 'Updates were rejected because the remote contains work that you do not have locally.'**
+  - This happens when the remote branch has new commits that you don’t have. To resolve this, first, pull the latest changes:
+    ```sh
+    git pull origin main
+    ```
+    Then resolve any conflicts that arise and commit the changes.
 
-- **School Supplies**: Example product - Colorful Gel Pen Set.
-- **Office Supplies**: Example product - Executive Fountain Pen.
-- **Others**: Example product - Eco-Friendly Notebook.
+- **Error: 'You have uncommitted changes.'**
+  - You need to either commit your changes or stash them before switching branches. To stash changes:
+    ```sh
+    git stash
+    ```
+    After switching branches, you can apply the stash:
+    ```sh
+    git stash apply
+    ```
 
-### Contact Page
-
-- **Location with a Map**: Interactive map showing franchise store locations.
-- **Hours of Operation**: Store hours to accommodate busy schedules.
-- **Contact Form**: Form for questions or feedback.
-
-## Graphics and Design
-
-- **Key Image**: Capturing the essence of the brand on the Home Page.
-- **High-Quality Product Images**: For the Products Page.
-- **Map**: For the Contact Page.
-- **Icons**: Enhancing the user interface.
-
-## Color Scheme
-
-- **Primary Color**: A blue tint representing dependability and trustworthiness.
-- **Secondary Color**: A complementary shade of yellow for call-to-action buttons and highlights.
-- **Neutral Colors**: White and grey tones for backgrounds and text to ensure contrast and legibility.
-
-## Font Styles
-
-- **Primary Font**: 'Roboto' for body text, ensuring readability with a clean and modern look.
-- **Secondary Font**: 'Montserrat' for headings and subheadings, creating a distinct and stylish appearance.
-
-
+- **Error: 'Merge conflicts'**
+  - Conflicts occur when Git cannot automatically merge changes. Open the conflicted files and manually resolve the conflicts. After resolving, add the resolved files:
+    ```sh
+    git add <file>
+    ```
+    Then continue the merge or rebase process:
+    ```sh
+    git commit -m 'Resolved merge conflicts'
+    ```
 
 ---
 
