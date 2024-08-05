@@ -144,9 +144,6 @@ input[type=checkbox] {
 /* Hero */
 #hero {
 	width: 100%;
-	padding: 20rem 0rem 10rem 0rem;
-	background-image: url("https://images.unsplash.com/photo-1513077202514-c511b41bd4c7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhdGlvbmVyeXxlbnwwfHwwfHx8MA%3D%3D");
-	background-position: center;
 }
 
 .btn-primary {
@@ -208,6 +205,8 @@ footer a:hover {
 /* Flyer Style */
 .flyer-img {
 	width: 100%;
+	object-fit: fill;
+	padding: .5rem;
 }
 
 .flyer-row {
@@ -224,12 +223,16 @@ footer a:hover {
 
 	.flyer-img {
 		width: 100%;
+		object-fit: fill;
+		padding: .5rem;
 	}
 }
 
 @media (min-width: 769px) {
 	.flyer-img {
 		width: 37%;
+		object-fit: fill;
+		padding: .5rem;
 	}
 }
 
@@ -459,4 +462,96 @@ hr {
 		margin: 0;
 		padding: 1rem 0;
 	}
+}
+
+.about_us_bg {
+	background-image: url("../Images/heroimage/About_us.jpg");
+}
+
+.shop_bg {
+	background-image: url("../Images/heroimage/shop.jpg");
+}
+
+.contact_us_bg {
+	background-image: url("../Images/heroimage/contact_us.jpg");
+}
+
+.home_bg {
+	background-image: url("../Images/heroimage/home.jpg");
+}
+
+.blur-layer {
+	background-color: rgba(255, 255, 255, 0.5);
+	height: 100%;
+	width: 100%;
+	padding: 20rem 0rem 10rem 0rem;
+	background-position: center;
+	backdrop-filter: blur(10px);
+}
+
+.about_us_row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.about_us_col_25 {
+	width: 25%;
+	padding: .25rem;
+	margin: 0;
+}
+
+.about_us_col_75 {
+	width: 75%;
+	padding: .25rem;
+	margin: 0;
+}
+
+.about_us_col_50 {
+	width: 50%;
+	padding: .25rem;
+	margin: 0;
+}
+
+
+.about_us_img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.about_us_row_no_mid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+@media (max-width: 768px) {
+	.about_us_row {
+		display: block;
+	}
+
+	.about_us_col_25 {
+		width: 100%;
+	}
+
+	.about_us_col_75 {
+		width: 100%;
+	}
+
+	.about_us_col_50 {
+		width: 100%;
+	}
+
+	.about_us_row_no_mid {
+		display: block;
+	}
+}
+
+.about_us_row_no_mid p,
+.about_us_row p {
+	text-align: justify !important;
 }
