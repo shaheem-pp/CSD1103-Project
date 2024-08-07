@@ -73,7 +73,7 @@ ol {
 
 /* CHECKBOX HACK */
 
-input[type=checkbox] {
+#checkbox_toggle[type=checkbox] {
 	display: none;
 }
 
@@ -122,7 +122,7 @@ input[type=checkbox] {
 		margin-top: 12px;
 	}
 
-	input[type=checkbox]:checked~.menu {
+	#checkbox_toggle[type=checkbox]:checked~.menu {
 		display: block;
 	}
 
